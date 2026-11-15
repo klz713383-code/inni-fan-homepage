@@ -1,0 +1,671 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --sky: #eaf7ff;
+  --blue: #83c9f5;
+  --deep-blue: #438fca;
+  --navy: #315b7d;
+  --white: #ffffff;
+  --shadow: 0 12px 35px rgba(94, 160, 205, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  color: var(--navy);
+  background:
+    radial-gradient(circle at 10% 10%, #ffffff 0, transparent 28%),
+    linear-gradient(180deg, #e8f7ff, #f7fbff 50%, #eaf6ff);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.topbar {
+  width: 100%;
+  min-height: 72px;
+  padding: 15px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 18px rgba(93, 153, 194, 0.08);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--deep-blue);
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-size: 13px;
+  font-weight: 600;
+  transition: color .2s;
+}
+
+nav a:hover {
+  color: #54a9e6;
+}
+
+.hero {
+  min-height: 440px;
+  padding: 90px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 30%, #ffffff 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 25%, #ffffff 0 3px, transparent 4px),
+    radial-gradient(circle at 65% 75%, #ffffff 0 2px, transparent 3px),
+    linear-gradient(135deg, #b9e5ff, #e4f5ff 55%, #c5e8ff);
+}
+
+.hero::before,
+.hero::after {
+  content: "✦";
+  position: absolute;
+  color: rgba(255,255,255,.8);
+  font-size: 70px;
+}
+
+.hero::before {
+  top: 50px;
+  left: 12%;
+}
+
+.hero::after {
+  bottom: 35px;
+  right: 13%;
+  font-size: 48px;
+}
+
+.hero-stars {
+  font-size: 27px;
+  color: white;
+  margin-bottom: 22px;
+  letter-spacing: 8px;
+}
+
+.eyebrow,
+.section-heading > span {
+  color: #559acb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 64px);
+  font-weight: 800;
+  color: #397daf;
+  margin: 12px 0;
+  text-shadow: 0 4px 12px rgba(255,255,255,.8);
+}
+
+.hero > p:not(.eyebrow) {
+  color: #537b9c;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.main-button {
+  padding: 14px 28px;
+  background: white;
+  color: #438fca;
+  border-radius: 40px;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  transition: transform .2s;
+}
+
+.main-button:hover {
+  transform: translateY(-3px);
+}
+
+.section {
+  max-width: 1100px;
+  padding: 75px 25px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font-size: 27px;
+  margin: 9px 0;
+  color: #376d98;
+}
+
+.section-heading p {
+  font-size: 13px;
+  color: #8ba9bf;
+}
+
+.photo-gallery,
+.notice-list,
+.calendar-card,
+.award-card {
+  background: rgba(255,255,255,.9);
+  border: 1px solid rgba(174, 216, 244, .6);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.photo-gallery {
+  min-height: 180px;
+  padding: 25px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.photo-gallery > p,
+.notice-list > p {
+  color: #91aabd;
+  text-align: center;
+  width: 100%;
+}
+
+.photo-gallery img {
+  width: 190px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+.notice-list {
+  padding: 24px;
+  min-height: 110px;
+}
+
+.notice-item {
+  padding: 15px 8px;
+  border-bottom: 1px solid #edf5fa;
+}
+
+.notice-item:last-child {
+  border-bottom: none;
+}
+
+.notice-item h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.notice-item p {
+  font-size: 13px;
+  color: #91aabd;
+  white-space: pre-wrap;
+}
+
+.calendar-card {
+  padding: 25px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.calendar-header h3 {
+  font-size: 19px;
+}
+
+.calendar-header button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #eaf6ff;
+  color: #438fca;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+
+.calendar-grid > div {
+  min-height: 48px;
+  padding: 8px 3px;
+  border-radius: 12px;
+  background: #f4faff;
+  font-size: 13px;
+}
+
+.calendar-grid .day-name {
+  background: transparent;
+  color: #74a9d0;
+  font-weight: 700;
+  min-height: auto;
+}
+
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.award-card {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.award-card > span {
+  font-size: 32px;
+}
+
+.award-card h3 {
+  margin: 12px 0;
+  color: #4d91c1;
+}
+
+.award-card p {
+  color: #8aa7bb;
+  font-size: 13px;
+}
+
+footer {
+  padding: 35px 20px;
+  text-align: center;
+  background: rgba(203, 232, 250, .55);
+  color: #7199b7;
+  font-size: 12px;
+  line-height: 2;
+}
+
+footer a {
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    flex-direction: column;
+    padding: 15px 12px;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 12px 18px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 360px;
+    padding: 65px 15px;
+  }
+
+  .section {
+    padding: 55px 16px;
+  }
+
+  .award-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-card {
+    padding: 15px 10px;
+  }
+
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .calendar-grid > div {
+    min-height: 42px;
+    font-size: 12px;
+  }
+}
+/* INI ADMIN DASHBOARD */
+.admin-body {
+  background: #f0f8ff;
+}
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 245px;
+  flex-shrink: 0;
+  padding: 30px 18px;
+  background: linear-gradient(180deg, #d7efff, #eaf6ff);
+  border-right: 1px solid #d9edfa;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-brand {
+  text-align: center;
+  padding: 15px 0 35px;
+}
+
+.admin-brand span {
+  font-size: 34px;
+  color: #5aa8df;
+}
+
+.admin-brand h2 {
+  color: #438fca;
+  letter-spacing: 3px;
+  font-size: 21px;
+}
+
+.admin-brand p {
+  color: #82a9c5;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.admin-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.admin-menu a,
+.admin-home-link {
+  padding: 14px;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #547c9b;
+  transition: .2s;
+}
+
+.admin-menu a:hover,
+.admin-menu a.active {
+  background: white;
+  color: #438fca;
+  box-shadow: 0 5px 18px rgba(93,153,194,.12);
+}
+
+.admin-home-link {
+  margin-top: auto;
+  text-align: center;
+  background: rgba(255,255,255,.65);
+}
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+  max-width: 1400px;
+  padding: 35px;
+  margin: auto;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.admin-header p,
+.admin-panel-title span {
+  color: #79a9cc;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.admin-header h1 {
+  color: #376d98;
+  font-size: 25px;
+  margin-top: 7px;
+}
+
+.admin-header > a {
+  background: white;
+  color: #438fca;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-welcome {
+  padding: 35px;
+  border-radius: 22px;
+  background: linear-gradient(120deg, #bce5ff, #edf8ff);
+  margin-bottom: 25px;
+}
+
+.admin-welcome > span {
+  font-size: 11px;
+  color: #579bc9;
+  letter-spacing: 3px;
+}
+
+.admin-welcome h2 {
+  font-size: 23px;
+  color: #397daf;
+  margin: 12px 0;
+}
+
+.admin-welcome p {
+  color: #638eac;
+  font-size: 13px;
+}
+
+.admin-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.admin-stat {
+  background: white;
+  border: 1px solid #e1f0fa;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.admin-stat span {
+  font-size: 25px;
+}
+
+.admin-stat p {
+  color: #88a8bd;
+  font-size: 12px;
+  margin: 12px 0 5px;
+}
+
+.admin-stat strong {
+  color: #438fca;
+  font-size: 15px;
+}
+
+.admin-panel {
+  background: white;
+  border: 1px solid #e1f0fa;
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.admin-panel-title {
+  margin-bottom: 10px;
+}
+
+.admin-panel-title h2 {
+  color: #376d98;
+  font-size: 20px;
+  margin-top: 7px;
+}
+
+.admin-panel label {
+  color: #668ba7;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-panel input,
+.admin-panel textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #dceefa;
+  border-radius: 12px;
+  background: #f8fcff;
+  color: #315b7d;
+  font: inherit;
+}
+
+.admin-panel textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.admin-panel button {
+  padding: 14px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #83c9f5, #65afe8);
+  color: white;
+  font-weight: 700;
+}
+
+.admin-award-fields {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.admin-award-fields > div {
+  padding: 15px;
+  border-radius: 14px;
+  background: #f4faff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-award-fields h3 {
+  color: #438fca;
+  font-size: 14px;
+}
+
+.admin-footer {
+  text-align: center;
+  color: #8aaac1;
+  font-size: 12px;
+  padding: 30px;
+}
+
+@media (max-width: 850px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .admin-brand {
+    padding: 5px 0 15px;
+  }
+
+  .admin-menu {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .admin-menu a {
+    white-space: nowrap;
+  }
+
+  .admin-home-link {
+    margin-top: 12px;
+  }
+
+  .admin-main {
+    padding: 20px 14px;
+  }
+
+  .admin-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-award-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-header h1 {
+    font-size: 21px;
+  }
+
+  .admin-welcome {
+    padding: 25px 18px;
+  }
+
+  .admin-panel {
+    padding: 20px 15px;
+  }
+}
